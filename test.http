@@ -1,0 +1,17 @@
+GET http://localhost:8080/books 
+
+HTTP/1.1 200  - OK
+content-type: application/json
+transfer-encoding: chunked
+date: Tue, 15 Mar 2022 18:08:40 GMT
+connection: close
+
+###
+
+GET http://localhost:8080/books 
+
+HTTP/1.1 200  - OK
+content-type: application/json
+transfer-encoding: chunked
+date: Tue, 15 Mar 2022 18:07:25 GMT
+connection: close
