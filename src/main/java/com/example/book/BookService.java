@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+
+
 @Service
 public class BookService {
    private List<Book> books;
@@ -28,4 +30,34 @@ public class BookService {
         }
         return null; //book not found
    }
+
+   public void create(Book book) {
+     if( book != null) {
+        book.setBookid(books.size()+1);
+        books.add(book);
+     }
+  }
+  
+  public void update(Book book) {
+     Book currentBook = null;
+     for (Book i: books){
+        if (i.getBookid()==book.getBookid())
+            currentBook = i;
+     }
+  
+     if(currentBook != null) {
+        books.set(books.indexOf(currentBook),book);
+     }
+  }
+  
+  public void delete(int id){
+     Book target=null;
+     for (Book i: books){
+        if (i.getBookid()==id)
+           target = i;
+     }
+     if (target!=null)
+        books.remove(target);
+  }
  }
+
