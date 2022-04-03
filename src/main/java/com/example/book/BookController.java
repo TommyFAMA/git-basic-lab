@@ -27,7 +27,7 @@ public class BookController {
         return bookservice.list();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}")                                      
     public ResponseEntity<?> getBook(@PathVariable int id) {
         Book b = bookservice.get(id);
         if (b != null)
@@ -41,17 +41,17 @@ public class BookController {
     }
 
     @PostMapping
-    public void create(@RequestBody Book book) {
+    public void create(@RequestBody Book book) {     //use @RequestBody to get data from the client
         bookservice.create(book);
     }
 
     @PutMapping
-    public void update(@RequestBody Book book) {
+    public void update(@RequestBody Book book) {   //use @RequestBody to get data from the client
         bookservice.update(book);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable int id) {
+    public void delete(@PathVariable int id) {     //indicates that a method parameters should be bound to a URI template variable (GetMapping("{/id}"))
         bookservice.delete(id);
     }
 }
